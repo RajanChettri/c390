@@ -1,6 +1,6 @@
-FROM node:latest as node
-RUN mkdir -p /app
+FROM java:latest as node
 WORKDIR /app
-RUN npm install 
+COPY . /app
 EXPOSE 4200
-CMD ["npm", "run", "start"]
+CMD ["javac", "hello.java"]
+CMD ["java", "hello"]
